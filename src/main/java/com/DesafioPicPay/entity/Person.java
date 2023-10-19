@@ -30,7 +30,10 @@ public class Person {
     private String email;
 
     @Column(unique = true)
-    private String document;
+    private String cpf;
+
+    @Column(unique = true)
+    private String cnpj;
 
     private BigDecimal balance;
 
