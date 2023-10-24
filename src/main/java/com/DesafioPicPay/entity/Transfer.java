@@ -20,9 +20,13 @@ public class Transfer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long senderId;
+    @ManyToOne
+    @JoinColumn(name = "sender_id")
+    private Person sender;
 
-    private Long receiverId;
+    @ManyToOne
+    @JoinColumn(name = "receiver_id")
+    private Person receiverId;
 
     private BigDecimal value;
 
