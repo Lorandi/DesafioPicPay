@@ -1,9 +1,7 @@
 package com.DesafioPicPay.resource;
 
-import com.DesafioPicPay.dto.PersonDTO;
 import com.DesafioPicPay.dto.TransferDTO;
-import com.DesafioPicPay.entity.Person;
-import com.DesafioPicPay.entity.Transfer;
+import com.DesafioPicPay.dto.TransferSummaryDTO;
 import com.DesafioPicPay.service.TransferService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,17 +20,17 @@ public class TransferResource {
     private final TransferService service;
 
     @PostMapping
-    public ResponseEntity<Transfer> createTransfer(@RequestBody TransferDTO transferDTO) {
+    public ResponseEntity<TransferSummaryDTO> createTransfer(@RequestBody TransferDTO transferDTO) {
         return new ResponseEntity<>(service.createTransfer(transferDTO), CREATED);
     }
 
     @GetMapping
-    public List<Transfer> findAll() {
+    public List<TransferSummaryDTO> findAll() {
         return ResponseEntity.ok(service.findAll()).getBody();
     }
 
     @GetMapping("/{id}")
-    public Transfer findById(@PathVariable Long id) {
+    public TransferSummaryDTO findById(@PathVariable Long id) {
         return ResponseEntity.ok(service.findById(id)).getBody();
     }
 }
