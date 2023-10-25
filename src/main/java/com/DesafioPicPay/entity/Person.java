@@ -1,10 +1,7 @@
 package com.DesafioPicPay.entity;
 
 import com.DesafioPicPay.enums.PersonTypeEnum;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -15,6 +12,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of="id")
+@Builder
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

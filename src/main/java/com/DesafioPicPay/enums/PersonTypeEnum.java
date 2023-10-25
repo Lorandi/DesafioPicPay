@@ -8,7 +8,7 @@ import lombok.Getter;
 @JsonSerialize(using = EnumSerializer.class)
 @AllArgsConstructor
 @Getter
-public enum PersonTypeEnum {
+public enum PersonTypeEnum implements EnumDescription {
     PHYSICAL_PERSON("Pessoa física"),
     JURIDIC_PERSON("Pessoa jurídica");
 

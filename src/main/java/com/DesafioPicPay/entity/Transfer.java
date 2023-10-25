@@ -1,9 +1,6 @@
 package com.DesafioPicPay.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -15,6 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of="id")
+@Builder
 public class Transfer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +20,7 @@ public class Transfer {
 
     @ManyToOne
     @JoinColumn(name = "sender_id")
-    private Person sender;
+    private Person senderId;
 
     @ManyToOne
     @JoinColumn(name = "receiver_id")
