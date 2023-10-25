@@ -129,7 +129,12 @@ public class PersonService {
     }
 
     public void checkIfEmailIsAlreadyRegistered(String email) {
-        if (email !=null && personRepository.findByEmail(email).isPresent()) {
+        if(email == null){
+            log.error(messageHelper.get(ERROR_EMAIL_IS_REQUIRED));
+            throw new ResponseStatusException(BAD_REQUEST, messageHelper.get(ERROR_EMAIL_IS_REQUIRED));
+        }
+
+        if (personRepository.findByEmail(email).isPresent()) {
             log.error(messageHelper.get(ERROR_EMAIL_ALREADY_REGISTERED, email));
             throw new ResponseStatusException(BAD_REQUEST, messageHelper.get(ERROR_EMAIL_ALREADY_REGISTERED, email));
         }
