@@ -24,7 +24,8 @@ public enum ExceptionsEnum {
     ERROR_JURIDIC_PERSON_SHOULD_NOT_HAVE_CPF("error.juridic.person.should.not.have.cpf"),
     ERROR_PHYSICAL_PERSON_SHOULD_NOT_HAVE_CNPJ("error.physical.person.should.not.have.cnpj"),
     ERROR_PERSON_TYPE_IS_REQUIRED("error.person.type.is.required"),
-    ERROR_EMAIL_IS_REQUIRED("error.email.is.required");
+    ERROR_EMAIL_IS_REQUIRED("error.email.is.required"),
+    ERROR_START_BALANCE_IS_REQUIRED("error.start.balance.is.required");
 
 
     private final String messageKey;

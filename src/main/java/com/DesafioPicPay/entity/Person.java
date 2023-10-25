@@ -33,7 +33,7 @@ public class Person {
     @Column(unique = true)
     private String cnpj;
 
-    private BigDecimal balance;
+    private BigDecimal balance = BigDecimal.ZERO;
 
     @Enumerated(EnumType.STRING)
     private PersonTypeEnum personType;

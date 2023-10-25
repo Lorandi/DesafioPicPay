@@ -38,10 +38,18 @@ public class PersonService {
                 .cpf(personDTO.getCpf())
                 .cnpj(personDTO.getCnpj())
                 .personType(personDTO.getPersonType())
-                .balance(personDTO.getBalance())
+                .balance(checkStartBalance(personDTO.getBalance()))
                 .build();
 
         return personRepository.save(person);
+    }
+
+    private BigDecimal checkStartBalance(BigDecimal balance) {
+        if (balance == null) {
+            log.warn(messageHelper.get(ERROR_START_BALANCE_IS_REQUIRED));
+            return BigDecimal.ZERO;
+        }
+        return balance;
     }
 
     public Person update(final Person person) {
