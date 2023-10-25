@@ -6,7 +6,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
-@Entity(name = "person")
+@Entity
 @Table(name = "person")
 @Data
 @AllArgsConstructor

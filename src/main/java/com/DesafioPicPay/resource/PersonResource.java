@@ -8,7 +8,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-
 import java.util.List;
 
 import static org.springframework.http.HttpStatus.CREATED;
@@ -23,8 +22,6 @@ public class PersonResource {
 
     @PostMapping
     public ResponseEntity<Person> createPerson(@RequestBody PersonDTO personDTO) {
-//        return ResponseEntity.ok(service.create(personDTO));
-
         return new ResponseEntity<>(service.create(personDTO), CREATED);
     }
 
