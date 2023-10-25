@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -57,6 +58,10 @@ public class TransferService {
                     log.error(messageHelper.get(ERROR_TRANSFER_NOT_FOUND, id));
                     return new ResponseStatusException(NOT_FOUND, messageHelper.get(ERROR_TRANSFER_NOT_FOUND, id));
                 });
+    }
+
+    public List<Transfer> findAll() {
+        return transferRepository.findAll();
     }
 
     public void validateTransfer(TransferDTO transferDTO) {
